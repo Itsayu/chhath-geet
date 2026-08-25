@@ -20,6 +20,7 @@ import {
   Sparkles,
   Layers
 } from 'lucide-react';
+import xLocalIcon from './assets/icons/x.jpg';
 import { toggleAmbientRiver } from './utils/audioSynth';
 
 declare global {
@@ -101,6 +102,8 @@ const PLAYLIST_DEFAULT_SONGS = [
   }
 ];
 
+// X icon will be displayed via an external SVG image URL (provided by user)
+
 export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -130,6 +133,8 @@ export default function App() {
 
   const PLAYLIST_ID = 'OLAK5uy_m8fsLH9krwi9l0AgRDfpXuQVgFxUh-oog';
   const SPOTIFY_PLAYLIST_LINK = 'https://open.spotify.com/s/buUmibC';
+  const X_PROFILE_URL = 'https://x.com/its_AKT_';
+  const X_PROFILE_HANDLE = '@its_AKT_';
 
   // Real-time Clock with blinking colon every second
   useEffect(() => {
@@ -606,6 +611,27 @@ export default function App() {
             <ArrowUpRight className="w-3 h-3 opacity-70 shrink-0" />
           </a>
 
+          {/* X / Twitter Profile: icon-only pill, always visible and placed last among header controls */}
+          <a
+            href={X_PROFILE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md text-white text-[11px] sm:text-xs font-medium transition-all active:scale-95 shadow-md order-last"
+            title="Open X profile"
+          >
+            {/* Inline X SVG (matches other icon sizes) */}
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              className="w-3.5 h-3.5 text-white shrink-0"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+
           {/* YT Music Pill */}
           <a
             href={`https://music.youtube.com/playlist?list=${PLAYLIST_ID}`}
@@ -727,6 +753,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Floating X button removed; X is now a header control pill */}
     </div>
   );
 }
