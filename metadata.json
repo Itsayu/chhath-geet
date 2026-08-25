@@ -1,0 +1,6 @@
+{
+  "name": "Chhath Puja - Nostalgic Ghat Experience",
+  "description": "An immersive, nostalgic, single-page cultural experience celebrating Chhath Puja with traditional folk melodies, floating diyas on Ganga ghat, authentic rituals, and sacred memories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
